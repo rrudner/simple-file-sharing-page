@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Saira&display=swap');
+
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+  background-color: #F29089;
+}
+
+.content {
+  background-color:rgba(0,0,0,.6);
+  border-radius:1.5em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  min-width: 60%;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+  font-family:Saira;
+  color: white;
+}
+
+.button {
+	background-color: #3F7A63;
+	border: none;
+	border-radius:1em;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+h1 {
+  font-size:3vw;
+}
+h2 {
+  font-size:1.5vw;
+}
+h3 {
+  font-size:1vw;
+}

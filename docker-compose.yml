@@ -1,0 +1,41 @@
+version: '3'
+services:
+
+  #PHP App
+  app:
+    build:
+      context: .
+      dockerfile: config/dockerfile
+    image: php:7.4-fpm
+    container_name: php-fpm
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www/html
+    volumes:
+      - ./code/:/var/www/html
+      - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    networks:
+      - simple-file-sharing-page
+
+  #Nginx Service
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./code/:/var/www/html
+      - ./config/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - simple-file-sharing-page
+
+#Docker Networks
+networks:
+  simple-file-sharing-page: 
+    external:
+      name: simple-file-sharing-page
