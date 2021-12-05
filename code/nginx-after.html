@@ -1,4 +1,22 @@
+		<form id="upload_form" enctype="multipart/form-data" method="post">
+			
+			<label for="file1" class="button">
+				<i class="fa fa-cloud-upload"></i> Select file
+			</label>
+			<input type="file" name="file1" id="file1">
+			
+			<label for="send" class="button" onclick="uploadFile()">
+				<i class="fa fa-cloud-upload"></i> Upload File
+			</label>
+			<input type="button" value="Upload File" onclick="uploadFile()" name="send" id="send">
+			
+			<br>
+
+			<progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+			<h3 id="status"></h3>
+			<p id="loaded_n_total"></p>
+		</form>
 		<button class="button" onclick="history.back()">Go Back</button>
 	</div>
 </body>
-</html> 
+</html>
